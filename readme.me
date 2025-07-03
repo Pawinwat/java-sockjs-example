@@ -1,0 +1,55 @@
+# Spring Boot WebSocket Chat Demo
+
+This is a simple Spring Boot application demonstrating a WebSocket-based chat server with support for multiple chat rooms and users. It supports:
+
+- WebSocket connections with STOMP protocol.
+- Sending messages to specific chat rooms.
+- Broadcasting messages to all subscribers of a room.
+- Sending messages via REST API.
+- Receiving messages via WebSocket and broadcasting.
+
+---
+
+## Features
+
+- **WebSocket endpoint:** `/gs-guide-websocket` for STOMP clients.
+- **Dynamic chat rooms:** Clients subscribe to `/topic/room/{roomId}`.
+- **REST API:** Send messages with POST `/api/send/{roomId}?user={username}`.
+- **Logging:** Server logs all received messages with user and room info.
+- **Simple Web UI:** Dynamic chat popup windows per room with send and receive functionality.
+
+---
+
+## Technologies Used
+
+- Spring Boot 3.x
+- Spring WebSocket
+- STOMP protocol
+- Jackson for JSON serialization/deserialization
+- Maven or Gradle (your choice)
+- Vanilla JavaScript with SockJS & Stomp.js for frontend
+
+---
+
+## Getting Started
+
+### Prerequisites
+
+- Java 17+ installed
+- Maven or Gradle
+- Postman (optional, for testing REST and WebSocket endpoints)
+- Modern browser to open the included UI
+
+### Running the Application
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/yourusername/spring-websocket-chat-demo.git
+cd spring-websocket-chat-demo
+```
+
+2. Build and run:
+```bash
+./mvnw spring-boot:run
+```
